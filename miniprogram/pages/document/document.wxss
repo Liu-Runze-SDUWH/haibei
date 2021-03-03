@@ -1,0 +1,203 @@
+/* @import "../wxSearch/wxSearch.wxss"; */
+
+page {
+  background-color: #e0f2ff;
+  height: 100%;
+  --ShadowSize: 6rpx 6rpx 8rpx;
+  --blueShadow: rgba(0, 0, 0, 0.2);
+}
+
+.top {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+}
+
+.catalogButton {
+  margin-left: 10px;
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.catalogButton image {
+  width: 25px;
+  height: 25px;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  background-color: #e0f2ff;
+  padding: 10px;
+}
+
+.searchBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px;
+  width: 520rpx;
+  border-radius: 5px;
+  background-color: white;
+  height: 15px;
+}
+
+.searchBar image {
+  height: 15px;
+  width: 15px;
+}
+
+.searchBar input {
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+.documentArea {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e0f2ff;
+  padding-bottom: 30px;
+}
+
+.documentArea2nd {
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.2);
+  /* box-shadow: var(--ShadowSize) var(--blueShadow); */
+  /* --ShadowSize: 0rpx 40rpx 100rpx 0rpx; */
+}
+
+.documentBar {
+  width: 700rpx;
+  background-color: transparent;
+  border-bottom-width: 1px;
+  border-bottom-color: #e0f2ff;
+  border-bottom-style: solid;
+  display: flex;
+  flex-direction: row;
+  padding: 8px;
+
+}
+
+.title {
+  margin-left: 10px;
+  margin-top: 3px;
+  font-size: 17px;
+  width: 600rpx;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin-left: 10px;
+  margin-top: 3px;
+  font-size: 15px;
+  width: 600rpx;
+}
+
+.subsubtitle {
+  margin-left: 60px;
+  margin-top: 3px;
+  font-size: 15px;
+  width: 600rpx;
+}
+
+.title1 {
+  margin-left: 10px;
+  margin-top: 3px;
+  font-size: 16px;
+  width: 600rpx;
+}
+
+.subtitle1 {
+  margin-left: 30px;
+  margin-top: 3px;
+  font-size: 15px;
+  width: 600rpx;
+}
+
+.subsubtitle1 {
+  margin-left: 45px;
+  margin-top: 3px;
+  font-size: 14px;
+  width: 600rpx;
+}
+
+.content {
+  margin-left: 30px;
+  margin-top: 3px;
+  font-size: 14px;
+  width: 720rpx;
+  line-height: 22px;
+}
+
+.content2 {
+  margin-top: 3px;
+  font-size: 14px;
+  width: 600rpx;
+}
+
+.folder {
+  position: absolute;
+  z-index: 3;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.catalog {
+  width: 60%;
+  background-color: white;
+}
+
+.blank {
+  width: 40%;
+  background-color: rgba(128, 128, 128, 0.5);
+}
+
+.catalogBar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  padding: 8px;
+  align-items: center;
+  padding-right: 18px;
+}
+
+.catalogBar-pressed {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  padding: 8px;
+  align-items: center;
+  padding-right: 18px;
+  background-color: rgb(235, 233, 233);
+}
+
+.scroll {
+  height: 95%;
+  width: 100%;
+}
+
+.weui-article__h1 {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.weui-article__h2 {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.4;
+}

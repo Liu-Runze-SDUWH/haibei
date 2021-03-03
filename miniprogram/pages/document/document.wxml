@@ -1,0 +1,83 @@
+<!-- 侧栏 -->
+<view class="folder" wx:if="{{showFolder}}">
+  <scroll-view class="catalog" scroll-y="true">
+    <block wx:for="{{collection}}" wx:for-item="item" wx:key="title">
+      <view class="catalogBar" data-type="1" data-index="{{item.id}}" bindtap="unfold1">
+        <van-icon wx:if="{{foldStatus1[item.id].flag}}" name="../../assets/images/arrow_down.png"
+          style="width:12px;height:12px;" />
+        <van-icon wx:else name="../../assets/images/arrow_right.png" style="width:12px;height:12px;" />
+        <text class="title">{{item.title}}</text>
+      </view>
+      <block wx:for="{{item.content}}" wx:if="{{foldStatus1[item.id].flag}}" wx:for-item="item1" wx:key="subtitle">
+        <view class="catalogBar" data-type="2" data-index="{{item1.id}}" bindtap="unfold1">
+          <van-icon wx:if="{{foldStatus2[item1.id].flag}}" name="../../assets/images/arrow_down.png"
+            style="margin-left: 24px;width:12px;height:12px;" />
+          <van-icon wx:else name="../../assets/images/arrow_right.png"
+            style="margin-left: 24px;width:12px;height:12px;" />
+          <text class="subtitle" style="font-weight: 600;">{{item1.subtitle}}</text>
+        </view>
+        <block wx:for="{{item1.subcontent}}" wx:if="{{foldStatus2[item1.id].flag}}" wx:for-item="item2"
+          wx:key="subsubtitle">
+          <view class="catalogBar" data-id="{{'item'+item2.id}}" bindtap="innerRedirect" hover-class="catalogBar-pressed">
+            <text class="subsubtitle">{{item2.subsubtitle}}</text>
+          </view>
+        </block>
+      </block>
+    </block>
+  </scroll-view>
+  <view class="blank" bindtap="showFolder"></view>
+</view>
+
+<!-- 搜索框 -->
+<view>
+  <van-search model:value="{{ searchInput }}" show-action shape="round" background="#e0f2ff" placeholder="请输入搜索关键词"
+    use-action-slot bind:cancel="onCancel" bind:clear="onClear" bind:focus="onFocus" bind:blur="onBlur"
+    bind:Folder="showFolder" bind:search="onClick">
+    <view slot="action" bind:tap="onClick">搜索</view>
+  </van-search>
+</view>
+
+<!-- 文档内容 -->
+<scroll-view class="scroll" scroll-y="true" scroll-into-view="{{bookmark}}">
+  <view class="documentArea">
+    <view class="documentArea2nd shadow" wx:if="{{!searching && !searched}}">
+      <block wx:for="{{collection}}" wx:for-item="item" wx:key="title">
+        <view class="documentBar" style="align-content:center; align-items:center; justify-content: center;">
+          <text class="weui-article__h1" style="text-align:center; margin-top: 5px; margin-bottom: 5px;">{{item.title}}</text>
+        </view>
+        <block wx:for="{{item.content}}" wx:for-item="item1" wx:key="subtitle">
+          <view class="documentBar" style="border-left-width:4px;border-left-color: #1296db;border-left-style: solid;">
+            <text class="weui-article__h2" style="margin-left:10px;">{{item1.subtitle}}</text>
+          </view>
+          <block wx:for="{{item1.subcontent}}" wx:for-item="item2" wx:key="subsubtitle">
+            <view class="documentBar"
+              style="border-left-width:8px;border-left-color: #1296db;border-left-style: solid;padding-top:10px;padding-bottom:20px;">
+              <view style="width:100%;padding-left:5px;" id="{{'item'+item2.id}}">
+                <text class="subtitle" style="font-weight:bold;margin-left: 0px;">{{item2.subsubtitle}}\n</text>
+                <view style="margin-bottom:10px;"></view>
+                <text class="content" style="font-size: 14px;margin-left: 0px;">{{item2.subsubcontent}}</text>
+              </view>
+            </view>
+          </block>
+        </block>
+      </block>
+    </view>
+    <!-- 搜索结果 -->
+    <view class="documentArea2nd" wx:if="{{searched}}">
+      <block wx:for="{{searchResult}}" wx:for-index="idx" wx:for-item="key_item" wx:key="key">
+        <view class="documentBar" style="padding-top:10px;padding-bottom:20px;">
+          <view style="width:100%;padding-left:5px;" id="{{'item'+item2.id}}">
+            <text class="subtitle" style="font-weight:bold;margin-left: 0px;">{{key_item.subsubtitle}}\n</text>
+            <view style="margin-bottom:10px;"></view>
+            <block wx:for="{{key_item.content}}" wx:for-index="idx2" wx:for-item="key_obj" wx:key="*this">
+              <!-- <view class="content"> -->
+              <text wx:if="{{key_obj.key == true}}" style="color:red; font-size: 14px;">{{key_obj.str}}</text>
+              <text wx:else style="font-size: 14px;">{{key_obj.str}}</text>
+              <!-- </view> -->
+            </block>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</scroll-view>

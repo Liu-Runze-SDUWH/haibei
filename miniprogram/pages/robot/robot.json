@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "chat": "plugin://chatbot/chat",
+    "customTextMessage": "../../components/customTextMessage/customTextMessage",
+    "customImageMessage": "../../components/customImageMessage/customImageMessage",
+    "customGuideCard": "../../components/customGuideCard/customGuideCard",
+    "customQueryMessage": "../../components/customQueryMessage/customQueryMessage",
+    "customNewsMessage": "../../components/customNewsMessage/customNewsMessage",
+    "customUnsupportedMessage": "../../components/customUnsupportedMessage/customUnsupportedMessage",
+    "customMiniprogramMessage": "../../components/customMiniprogramMessage/customMiniprogramMessage",
+    "customh5Message": "../../components/customh5Message/customh5Message"
+  },
+  "navigationBarTitleText": "问答助手"
+}

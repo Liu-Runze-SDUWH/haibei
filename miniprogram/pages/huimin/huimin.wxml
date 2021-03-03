@@ -1,0 +1,11 @@
+<image src="cloud://waimai-t0mfg.7761-waimai-t0mfg-1301103474/01.png" style="width:100%;" mode="widthFix" bindload="load"></image>
+<view wx:if="{{!loaded}}" class="bg-white" style="height:100%;width:100%;justify-content:center;align-items:center">
+  <view class="cu-load bg-white {{!loaded?'loading':'over'}}" style="font-color: #027aff; "></view>
+</view>
+<view wx:else>
+  <image src="cloud://waimai-t0mfg.7761-waimai-t0mfg-1301103474/02.png" style="width:100%;" mode="widthFix"></image>
+  <image src="cloud://waimai-t0mfg.7761-waimai-t0mfg-1301103474/03.png" style="width:100%;" mode="widthFix"></image>
+<image src="cloud://waimai-t0mfg.7761-waimai-t0mfg-1301103474/04.png" style="width:100%;" mode="widthFix"></image>
+<image src="cloud://waimai-t0mfg.7761-waimai-t0mfg-1301103474/05.png" style="width:100%;" mode="widthFix"></image>
+</view>
+

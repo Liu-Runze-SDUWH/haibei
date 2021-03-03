@@ -1,0 +1,39 @@
+<!-- 顶部图片 -->
+<image src="../../assets/images/indexlogo.jpg" style="width:100%; margin-bottom: 10px;" mode="widthFix"></image>
+
+<!-- 了解政策标题 -->
+<view class="link">
+  <text class="text-xl text-bold text-blue">了解政策</text>
+  <view
+    style="width: 50px; border-top: 3px; border-top-color: #0081ff; border-top-style: solid; margin-left: 10px; margin-top: 7px;">
+  </view>
+</view>
+
+<!-- 了解政策内容 -->
+<view class='nav-list' style="margin-top: 20px;">
+  <view class="nav-li bg-blue" bindtap="toRobot" hover-class="van-button--active hover-class">
+    <view class="nav-title">问答助手</view>
+    <view class="nav-name">Robot</view>
+    <text class='cuIcon-myfill'></text>
+  </view>
+  <view class="nav-li bg-orange" bindtap="toDocument" hover-class="van-button--active hover-class">
+    <view class="nav-title">信用文档</view>
+    <view class="nav-name">Document</view>
+    <text class='cuIcon-copy'></text>
+  </view>
+</view>
+
+<!-- 特色专栏标题 -->
+<view class="link">
+  <text class="text-xl text-bold text-blue">特色专栏</text>
+  <view
+    style="width: 50px; border-top: 3px; border-top-color: #0081ff; border-top-style: solid; margin-left: 10px; margin-top: 7px;">
+  </view>
+</view>
+
+<!-- 特色专栏内容 -->
+<van-grid square column-num="3" border="{{ false }}" clickable>
+  <van-grid-item wx:for="{{grids}}" wx:key="id" text="{{item.title}}" icon="{{item.path}}" bindtap="nav"
+    data-id="{{item.id}}">
+  </van-grid-item>
+</van-grid>
